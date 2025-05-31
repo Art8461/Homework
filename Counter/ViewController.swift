@@ -9,15 +9,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var Counter: UILabel!
+    @IBOutlet private weak var Counter: UILabel!
     
-    @IBOutlet weak var HistoryTextView: UITextView!
+    @IBOutlet private weak var HistoryTextView: UITextView!
     
     var count = 0 // Переменная счетчика
     
     func appendHistory(_ text: String) {
             let formatter = DateFormatter()
-            formatter.dateFormat = "HH:mm:ss"
+            formatter.dateFormat = "dd.MM.yyyy HH:mm:ss"
             let timestamp = formatter.string(from: Date())
             HistoryTextView.text += "\(timestamp): \(text)\n"
             let range = NSMakeRange(HistoryTextView.text.count - 1, 0)
